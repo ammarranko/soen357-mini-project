@@ -1,0 +1,609 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SOEN 357 Mini Project — Health Companion Super App</title>
+  <meta name="description" content="UX case study for SOEN 357: Health Companion Super App." />
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Optional: nicer font (works without it too) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="#top" aria-label="Go to top">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span>SOEN 357 • UX Case Study</span>
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <a href="#problem">Problem</a>
+        <a href="#research">Research</a>
+        <a href="#personas">Personas</a>
+        <a href="#journey">Journey</a>
+        <a href="#flow">Flow</a>
+        <a href="#design">Design</a>
+        <a href="#testing">Testing</a>
+        <a href="#reflection">Reflection</a>
+      </nav>
+
+      <div class="topbar-actions">
+        <button id="themeBtn" class="btn ghost" type="button" aria-label="Toggle theme">
+          Toggle theme
+        </button>
+        <a class="btn" href="#prototype">Prototype</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section id="top" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-left">
+          <p class="pill">Mini Project • Winter 2026</p>
+          <h1>Health Companion Super App</h1>
+          <p class="subtitle">
+            A user-centered UX case study focusing on medication adherence, appointment scheduling,
+            and communication with healthcare professionals.
+          </p>
+
+          <div class="hero-meta">
+            <div class="meta-card">
+              <div class="meta-label">Student</div>
+              <div class="meta-value">Your Name</div>
+            </div>
+            <div class="meta-card">
+              <div class="meta-label">Course</div>
+              <div class="meta-value">SOEN 357</div>
+            </div>
+            <div class="meta-card">
+              <div class="meta-label">Deliverables</div>
+              <div class="meta-value">Personas • Journey • Wireframes • Prototype</div>
+            </div>
+          </div>
+
+          <div class="hero-cta">
+            <a class="btn" href="#toc">View Table of Contents</a>
+            <a class="btn ghost" href="#design">Jump to Design</a>
+          </div>
+        </div>
+
+        <aside class="hero-right" aria-label="Project summary">
+          <div class="card">
+            <h2 class="card-title">At a glance</h2>
+            <ul class="checklist">
+              <li><strong>Goal:</strong> Improve adherence + reduce stress</li>
+              <li><strong>Primary flows:</strong> Add med → Reminder → Log → Summary</li>
+              <li><strong>Approach:</strong> User-centered design + iteration</li>
+              <li><strong>Evaluation:</strong> Usability test plan + findings</li>
+            </ul>
+          </div>
+
+          <div class="card muted">
+            <h2 class="card-title">Files / Links</h2>
+            <ul class="links">
+              <li><a href="#prototype">Figma prototype</a></li>
+              <li><a href="#appendix">Appendix / Assets</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- TOC -->
+    <section id="toc" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Table of Contents</h2>
+          <p class="section-sub">Quick navigation across required deliverables.</p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3 class="card-title">Core sections</h3>
+            <ol class="toc">
+              <li><a href="#problem">Introduction & Problem</a></li>
+              <li><a href="#research">Research</a></li>
+              <li><a href="#personas">Personas</a></li>
+              <li><a href="#journey">Journey Maps</a></li>
+              <li><a href="#requirements">Requirements</a></li>
+              <li><a href="#flow">User Flow</a></li>
+              <li><a href="#design">Sketches & Wireframes</a></li>
+              <li><a href="#prototype">Clickable Prototype</a></li>
+              <li><a href="#testing">Usability Testing</a></li>
+              <li><a href="#reflection">Reflection</a></li>
+            </ol>
+          </div>
+
+          <div class="card">
+            <h3 class="card-title">Submission checklist</h3>
+            <ul class="checklist">
+              <li>Clear intro + context</li>
+              <li>≥ 2 detailed personas</li>
+              <li>Journey map for each persona</li>
+              <li>Sketches + wireframes</li>
+              <li>Storyboard</li>
+              <li>User flow chart</li>
+              <li>Clickable prototype link/embed</li>
+              <li>Usability test plan + summary</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROBLEM -->
+    <section id="problem" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Introduction & Problem</h2>
+          <p class="section-sub">
+            Define the problem space and what success looks like.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3 class="card-title">Context</h3>
+            <p>
+              People managing chronic conditions often use fragmented tools (alarms, notes, memory).
+              This creates missed doses, confusion, and stress around appointments and communication.
+            </p>
+            <p class="note">
+              Replace this with your exact context + target population.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3 class="card-title">Problem statement</h3>
+            <p>
+              Users struggle to consistently remember medications, track adherence, manage appointments,
+              and communicate with healthcare professionals in one place.
+            </p>
+
+            <div class="callout">
+              <strong>Design goal:</strong> Create an interaction flow that reduces cognitive load,
+              improves adherence, and feels trustworthy and calm.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESEARCH -->
+    <section id="research" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Research</h2>
+          <p class="section-sub">
+            Show evidence: method, participants, insights, and design implications.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card">
+            <h3 class="card-title">Method</h3>
+            <ul class="bullets">
+              <li>Survey: <strong>10+ participants</strong></li>
+              <li>Optional: 1–2 short interviews</li>
+              <li>Questions focused on routines, pain points, priorities</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3 class="card-title">Key findings</h3>
+            <ul class="bullets">
+              <li>Many users forget at least once per week</li>
+              <li>Phone alarms are common but incomplete</li>
+              <li>Logging must be fast (≤ 2 taps)</li>
+              <li>Older users need clarity + large text</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3 class="card-title">Design implications</h3>
+            <ul class="bullets">
+              <li>One-tap “Taken” from reminder</li>
+              <li>Persistent reminders until confirmed</li>
+              <li>Simple weekly adherence summary</li>
+              <li>Accessibility-first typography & contrast</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card wide">
+          <h3 class="card-title">Charts / Evidence</h3>
+          <p class="note">
+            Insert charts here (screenshots from Google Forms analytics or your own graphs).
+          </p>
+          <div class="placeholder">
+            <span>Drop images here: research charts (PNG/JPG)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PERSONAS -->
+    <section id="personas" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Personas</h2>
+          <p class="section-sub">At least two detailed personas grounded in research.</p>
+        </div>
+
+        <div class="grid-2">
+          <article class="card persona">
+            <div class="persona-head">
+              <div>
+                <h3 class="card-title">Persona 1 — Maria</h3>
+                <p class="muted-text">63 • Retired • Multiple medications daily</p>
+              </div>
+              <span class="badge">Accessibility-focused</span>
+            </div>
+
+            <div class="persona-grid">
+              <div>
+                <h4>Goals</h4>
+                <ul class="bullets">
+                  <li>Never miss a dose</li>
+                  <li>Feel confident and reassured</li>
+                  <li>Simple appointment management</li>
+                </ul>
+              </div>
+              <div>
+                <h4>Pain points</h4>
+                <ul class="bullets">
+                  <li>Too many steps or small text</li>
+                  <li>Unclear confirmation if taken</li>
+                  <li>Notification fatigue</li>
+                </ul>
+              </div>
+              <div>
+                <h4>Behaviors</h4>
+                <ul class="bullets">
+                  <li>Uses phone + paper notes</li>
+                  <li>Prefers calm, clear UI</li>
+                </ul>
+              </div>
+              <div>
+                <h4>Quote</h4>
+                <p class="quote">“I just want to be sure I took it — without getting confused.”</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="card persona">
+            <div class="persona-head">
+              <div>
+                <h3 class="card-title">Persona 2 — David</h3>
+                <p class="muted-text">32 • Busy professional • One medication daily</p>
+              </div>
+              <span class="badge">Speed-focused</span>
+            </div>
+
+            <div class="persona-grid">
+              <div>
+                <h4>Goals</h4>
+                <ul class="bullets">
+                  <li>Fast logging</li>
+                  <li>Discreet reminders at work</li>
+                  <li>Quick appointment booking</li>
+                </ul>
+              </div>
+              <div>
+                <h4>Pain points</h4>
+                <ul class="bullets">
+                  <li>Too many confirmations</li>
+                  <li>Hard to see progress quickly</li>
+                </ul>
+              </div>
+              <div>
+                <h4>Behaviors</h4>
+                <ul class="bullets">
+                  <li>Uses calendar + notifications heavily</li>
+                  <li>Skims UI; wants shortcuts</li>
+                </ul>
+              </div>
+              <div>
+                <h4>Quote</h4>
+                <p class="quote">“If it takes more than a few seconds, I’ll stop using it.”</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- JOURNEY -->
+    <section id="journey" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Journey Maps</h2>
+          <p class="section-sub">One journey map per persona (required).</p>
+        </div>
+
+        <div class="card wide">
+          <h3 class="card-title">Maria — Journey map</h3>
+          <div class="placeholder">
+            <span>Insert your journey map image (wide).</span>
+          </div>
+          <p class="note">Tip: include stages, emotions, pain points, opportunities.</p>
+        </div>
+
+        <div class="card wide">
+          <h3 class="card-title">David — Journey map</h3>
+          <div class="placeholder">
+            <span>Insert your journey map image (wide).</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REQUIREMENTS -->
+    <section id="requirements" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Requirements</h2>
+          <p class="section-sub">Trace research insights to design requirements.</p>
+        </div>
+
+        <div class="card wide">
+          <div class="table-wrap" role="region" aria-label="Requirements table" tabindex="0">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Insight</th>
+                  <th>User need</th>
+                  <th>Product requirement</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Users forget weekly</td>
+                  <td>Reliable reminders</td>
+                  <td>Persistent reminder until confirmed</td>
+                </tr>
+                <tr>
+                  <td>Speed is critical</td>
+                  <td>Fast interaction</td>
+                  <td>Mark “Taken” in ≤ 2 taps from reminder</td>
+                </tr>
+                <tr>
+                  <td>Older users struggle with complexity</td>
+                  <td>Accessibility and clarity</td>
+                  <td>Large text, high contrast, simple navigation depth</td>
+                </tr>
+                <tr>
+                  <td>Stress about adherence</td>
+                  <td>Confidence and reassurance</td>
+                  <td>Weekly adherence summary with simple visuals</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="note">
+            Replace with your real findings and add IDs like R1, R2… if you want.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FLOW -->
+    <section id="flow" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>User Flow Chart</h2>
+          <p class="section-sub">A single flow chart covering your main tasks.</p>
+        </div>
+
+        <div class="card wide">
+          <div class="placeholder">
+            <span>Insert user flow chart image (PNG/JPG).</span>
+          </div>
+          <p class="note">Keep it readable: main screens + decisions (Taken/Snooze/Skip).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- DESIGN -->
+    <section id="design" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Design</h2>
+          <p class="section-sub">Sketches, wireframes, and storyboard with iteration notes.</p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3 class="card-title">Sketches</h3>
+            <div class="placeholder small">
+              <span>Insert sketches (photos/scans)</span>
+            </div>
+            <p class="note">
+              Include at least one “rejected” sketch and explain why you changed it.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3 class="card-title">Wireframes</h3>
+            <div class="placeholder small">
+              <span>Insert wireframes (screenshots)</span>
+            </div>
+            <p class="note">Show key screens for your main flows.</p>
+          </div>
+        </div>
+
+        <div class="card wide">
+          <h3 class="card-title">Storyboard</h3>
+          <div class="placeholder">
+            <span>Insert storyboard image (6 panels recommended).</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROTOTYPE -->
+    <section id="prototype" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Clickable Prototype</h2>
+          <p class="section-sub">Embed your Figma prototype or link it clearly.</p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3 class="card-title">Prototype link</h3>
+            <p>
+              Add your Figma share link below:
+            </p>
+            <p class="note">
+              Replace the href with your real link.
+            </p>
+            <a class="btn" href="https://www.figma.com" target="_blank" rel="noreferrer">
+              Open prototype
+            </a>
+          </div>
+
+          <div class="card">
+            <h3 class="card-title">Embed (optional)</h3>
+            <p class="note">If you want an embed, paste your Figma embed URL below.</p>
+            <div class="embed">
+              <!-- Replace src with Figma embed link -->
+              <iframe
+                title="Figma prototype"
+                src="about:blank"
+                loading="lazy"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTING -->
+    <section id="testing" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Usability Testing</h2>
+          <p class="section-sub">Plan, tasks, metrics, results, and iteration.</p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card">
+            <h3 class="card-title">Goals</h3>
+            <ul class="bullets">
+              <li>Can users add a medication?</li>
+              <li>Can users log a dose quickly?</li>
+              <li>Can users find weekly adherence?</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3 class="card-title">Tasks</h3>
+            <ol class="toc">
+              <li>Add a medication + schedule</li>
+              <li>Respond to a reminder</li>
+              <li>Check weekly summary</li>
+            </ol>
+          </div>
+
+          <div class="card">
+            <h3 class="card-title">Metrics</h3>
+            <ul class="bullets">
+              <li>Task success rate</li>
+              <li>Time on task</li>
+              <li>Errors / confusion points</li>
+              <li>SEQ (1–7 ease rating)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card wide">
+          <h3 class="card-title">Results & Iterations</h3>
+          <p class="note">
+            Add 3 key findings + what you changed. Include before/after screenshots.
+          </p>
+          <div class="placeholder">
+            <span>Insert “before vs after” screenshots here.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REFLECTION -->
+    <section id="reflection" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Reflection</h2>
+          <p class="section-sub">What you learned, what you would improve, and why.</p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3 class="card-title">What worked</h3>
+            <ul class="bullets">
+              <li>Research-driven requirements reduced redesign later</li>
+              <li>One-tap logging improved efficiency</li>
+              <li>Clear hierarchy improved learnability</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3 class="card-title">What I’d improve</h3>
+            <ul class="bullets">
+              <li>More participants for usability sessions</li>
+              <li>More scenarios (caregiver mode, refills)</li>
+              <li>Longitudinal testing (“in the wild”)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- APPENDIX -->
+    <section id="appendix" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Appendix / Assets</h2>
+          <p class="section-sub">Put extra charts, notes, raw responses, or references here.</p>
+        </div>
+
+        <div class="card">
+          <p class="note">
+            Recommended: include a link to your survey form (if allowed) and anonymized results.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="card">
+          <h2 class="card-title">Contact</h2>
+          <p class="muted-text">Your email / GitHub link</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <p>© <span id="year"></span> Your Name — SOEN 357 Mini Project</p>
+        <a href="#top">Back to top</a>
+      </div>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
