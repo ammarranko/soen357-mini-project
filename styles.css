@@ -38,12 +38,6 @@ img { max-width: 100%; height: auto; display: block; }
   text-align: center;
   overflow: hidden;
   background: linear-gradient(135deg, #0a1628 0%, #0d2137 30%, #004B87 70%, #0070c9 100%);
-  background-size: 300% 300%;
-  animation: heroShift 12s ease infinite;
-}
-@keyframes heroShift {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
 }
 .hero::after {
   content: '';
