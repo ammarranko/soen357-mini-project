@@ -1,608 +1,550 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SOEN 357 Mini Project — Health Companion Super App</title>
-  <meta name="description" content="UX case study for SOEN 357: Health Companion Super App." />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MedicNova - UX Case Study</title>
   <link rel="stylesheet" href="styles.css" />
-
-  <!-- Optional: nicer font (works without it too) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
 </head>
-
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="topbar">
-    <div class="container topbar-inner">
-      <a class="brand" href="#top" aria-label="Go to top">
-        <span class="brand-dot" aria-hidden="true"></span>
-        <span>SOEN 357 • UX Case Study</span>
-      </a>
+  <main id="content">
 
-      <nav class="nav" aria-label="Primary">
-        <a href="#problem">Problem</a>
-        <a href="#research">Research</a>
-        <a href="#personas">Personas</a>
-        <a href="#journey">Journey</a>
-        <a href="#flow">Flow</a>
-        <a href="#design">Design</a>
-        <a href="#testing">Testing</a>
-        <a href="#reflection">Reflection</a>
-      </nav>
-
-      <div class="topbar-actions">
-        <button id="themeBtn" class="btn ghost" type="button" aria-label="Toggle theme">
-          Toggle theme
-        </button>
-        <a class="btn" href="#prototype">Prototype</a>
+    <!-- ======= HERO ======= -->
+    <header class="hero">
+      <div class="hero-inner">
+        <p class="hero-label">SOEN 357 - UX Case Study</p>
+        <h1 class="hero-title">
+          Designing <span class="highlight">MedicNova</span><br />
+          A Medication Companion App<br />
+          <span class="hero-subtitle">Through User-Centred Research</span>
+        </h1>
+        <div class="hero-meta">
+          <span>SOEN 357</span>
+          <span>February 2026</span>
+        </div>
+        <a href="Mini project report.pdf" download class="pdf-download-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download Full Report (PDF)
+        </a>
       </div>
-    </div>
-  </header>
+    </header>
 
-  <main id="main">
-    <!-- HERO -->
-    <section id="top" class="hero">
-      <div class="container hero-grid">
-        <div class="hero-left">
-          <p class="pill">Mini Project • Winter 2026</p>
-          <h1>Health Companion Super App</h1>
-          <p class="subtitle">
-            A user-centered UX case study focusing on medication adherence, appointment scheduling,
-            and communication with healthcare professionals.
-          </p>
-
-          <div class="hero-meta">
-            <div class="meta-card">
-              <div class="meta-label">Student</div>
-              <div class="meta-value">Your Name</div>
-            </div>
-            <div class="meta-card">
-              <div class="meta-label">Course</div>
-              <div class="meta-value">SOEN 357</div>
-            </div>
-            <div class="meta-card">
-              <div class="meta-label">Deliverables</div>
-              <div class="meta-value">Personas • Journey • Wireframes • Prototype</div>
-            </div>
-          </div>
-
-          <div class="hero-cta">
-            <a class="btn" href="#toc">View Table of Contents</a>
-            <a class="btn ghost" href="#design">Jump to Design</a>
-          </div>
-        </div>
-
-        <aside class="hero-right" aria-label="Project summary">
-          <div class="card">
-            <h2 class="card-title">At a glance</h2>
-            <ul class="checklist">
-              <li><strong>Goal:</strong> Improve adherence + reduce stress</li>
-              <li><strong>Primary flows:</strong> Add med → Reminder → Log → Summary</li>
-              <li><strong>Approach:</strong> User-centered design + iteration</li>
-              <li><strong>Evaluation:</strong> Usability test plan + findings</li>
-            </ul>
-          </div>
-
-          <div class="card muted">
-            <h2 class="card-title">Files / Links</h2>
-            <ul class="links">
-              <li><a href="#prototype">Figma prototype</a></li>
-              <li><a href="#appendix">Appendix / Assets</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>
-          </div>
-        </aside>
+    <!-- ======= TABLE OF CONTENTS ======= -->
+    <nav id="toc" class="toc-section">
+      <div class="toc-inner">
+        <h2 class="toc-title">Table of Contents</h2>
+        <ol class="toc-list">
+          <li><a href="#introduction"><span class="toc-num">01</span> Introduction</a></li>
+          <li><a href="#research"><span class="toc-num">02</span> Research</a></li>
+          <li><a href="#personas"><span class="toc-num">03</span> Personas</a></li>
+          <li><a href="#journeys"><span class="toc-num">04</span> User Journeys</a></li>
+          <li><a href="#storyboard"><span class="toc-num">05</span> Storyboard</a></li>
+          <li><a href="#userflow"><span class="toc-num">06</span> User Flow</a></li>
+          <li><a href="#design"><span class="toc-num">07</span> Sketching, Wireframing &amp; Prototype</a></li>
+          <li><a href="#usability"><span class="toc-num">08</span> Usability Testing Plan</a></li>
+          <li><a href="#reflection"><span class="toc-num">09</span> Reflection</a></li>
+        </ol>
       </div>
-    </section>
+    </nav>
 
-    <!-- TOC -->
-    <section id="toc" class="section">
-      <div class="container">
-        <div class="section-head">
-          <h2>Table of Contents</h2>
-          <p class="section-sub">Quick navigation across required deliverables.</p>
-        </div>
+    <!-- ================================================ -->
+    <!--  01 - INTRODUCTION                                -->
+    <!-- ================================================ -->
+    <section id="introduction" class="section">
+      <div class="section-header">
+        <span class="section-number">01</span>
+        <h2>Introduction</h2>
+      </div>
 
-        <div class="grid-2">
-          <div class="card">
-            <h3 class="card-title">Core sections</h3>
-            <ol class="toc">
-              <li><a href="#problem">Introduction & Problem</a></li>
-              <li><a href="#research">Research</a></li>
-              <li><a href="#personas">Personas</a></li>
-              <li><a href="#journey">Journey Maps</a></li>
-              <li><a href="#requirements">Requirements</a></li>
-              <li><a href="#flow">User Flow</a></li>
-              <li><a href="#design">Sketches & Wireframes</a></li>
-              <li><a href="#prototype">Clickable Prototype</a></li>
-              <li><a href="#testing">Usability Testing</a></li>
-              <li><a href="#reflection">Reflection</a></li>
-            </ol>
-          </div>
+      <div class="intro-logo">
+        <img src="images/logo.png" alt="MedicNova logo" />
+      </div>
 
-          <div class="card">
-            <h3 class="card-title">Submission checklist</h3>
-            <ul class="checklist">
-              <li>Clear intro + context</li>
-              <li>≥ 2 detailed personas</li>
-              <li>Journey map for each persona</li>
-              <li>Sketches + wireframes</li>
-              <li>Storyboard</li>
-              <li>User flow chart</li>
-              <li>Clickable prototype link/embed</li>
-              <li>Usability test plan + summary</li>
-            </ul>
-          </div>
-        </div>
+      <div class="prose-block">
+        <h3>Context</h3>
+        <p>
+          How many times have you forgotten to take your medication? Patients with chronic conditions frequently struggle to manage complex medication schedules and keep track of upcoming doctor's appointments. Existing digital solutions are often either too complex or too fragmented to be truly helpful.
+        </p>
+        <p>
+          The goal of this project was to design <em>MedicNova</em>, a health companion "super app" that consolidates reminders, medication tracking, appointment scheduling, and direct communication with healthcare professionals into one seamless, stress-free experience.
+        </p>
+      </div>
+
+      <div class="prose-block">
+        <h3>Problem Statement</h3>
+        <p>The main challenges from a user perspective break down as follows:</p>
+        <ul class="dash-list">
+          <li>Remember medications consistently: users often forget doses due to busy schedules, interruptions, or inconsistent routines.</li>
+          <li>Track adherence over time: users need a simple way to log doses and review patterns.</li>
+          <li>Reduce "Did I take it?" uncertainty: users frequently second-guess themselves and need clear confirmation.</li>
+          <li>Coordinate appointments: users struggle to keep up with follow-ups, renewals, and medical visits.</li>
+          <li>Communicate easily with healthcare professionals: users want to share accurate medication info for better care decisions.</li>
+        </ul>
+      </div>
+
+      <div class="prose-block">
+        <h3>Design Goals</h3>
+        <p>Since illness does not discriminate by age, MedicNova is designed to be adaptable for a wide range of users. The core focus is simplicity: clear, direct, and free of unnecessary clutter.</p>
+        <ul class="arrow-list">
+          <li>Increase adherence through reliable, actionable reminders</li>
+          <li>Reduce uncertainty through visible confirmation states (Taken + timestamp)</li>
+          <li>Support busy contexts via minimal-step logging</li>
+          <li>Avoid notification fatigue via flexible reminder styles</li>
+          <li>Support accessibility with readable UI and large tap targets</li>
+        </ul>
+      </div>
+
+      <div class="prose-block">
+        <h3>Target Users &amp; Scope</h3>
+        <p>Primary users are adults who manage their own medications (typically 2-5 doses per day). Secondary users are caregivers who manage medications on behalf of a family member or dependent. The prototype scope covers the core medication management workflow (reminders + tracking), appointment scheduling, and messaging with healthcare professionals.</p>
       </div>
     </section>
 
-    <!-- PROBLEM -->
-    <section id="problem" class="section">
-      <div class="container">
-        <div class="section-head">
-          <h2>Introduction & Problem</h2>
-          <p class="section-sub">
-            Define the problem space and what success looks like.
-          </p>
-        </div>
-
-        <div class="grid-2">
-          <div class="card">
-            <h3 class="card-title">Context</h3>
-            <p>
-              People managing chronic conditions often use fragmented tools (alarms, notes, memory).
-              This creates missed doses, confusion, and stress around appointments and communication.
-            </p>
-            <p class="note">
-              Replace this with your exact context + target population.
-            </p>
-          </div>
-
-          <div class="card">
-            <h3 class="card-title">Problem statement</h3>
-            <p>
-              Users struggle to consistently remember medications, track adherence, manage appointments,
-              and communicate with healthcare professionals in one place.
-            </p>
-
-            <div class="callout">
-              <strong>Design goal:</strong> Create an interaction flow that reduces cognitive load,
-              improves adherence, and feels trustworthy and calm.
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- RESEARCH -->
+    <!-- ================================================ -->
+    <!--  02 - RESEARCH                                    -->
+    <!-- ================================================ -->
     <section id="research" class="section">
-      <div class="container">
-        <div class="section-head">
-          <h2>Research</h2>
-          <p class="section-sub">
-            Show evidence: method, participants, insights, and design implications.
-          </p>
-        </div>
+      <div class="section-header">
+        <span class="section-number">02</span>
+        <h2>Research</h2>
+      </div>
 
-        <div class="grid-3">
-          <div class="card">
-            <h3 class="card-title">Method</h3>
-            <ul class="bullets">
-              <li>Survey: <strong>10+ participants</strong></li>
-              <li>Optional: 1–2 short interviews</li>
-              <li>Questions focused on routines, pain points, priorities</li>
-            </ul>
+      <p class="section-intro">
+        To build a medication app that truly works, I needed to understand real-life habits. I started with a user survey, then backed up those findings with a literature review of healthcare and HCI research, combining direct feedback with established science.
+      </p>
+
+      <div class="prose-block">
+        <h3>Primary Research - Survey</h3>
+        <p>A survey of 12 participants gathered data on medication loads, missed-dose frequency, tools used, frustrations, and feature priorities. Here are the key takeaways:</p>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <span class="stat-number">83%</span>
+            <span class="stat-label">self-manage medication</span>
           </div>
-
-          <div class="card">
-            <h3 class="card-title">Key findings</h3>
-            <ul class="bullets">
-              <li>Many users forget at least once per week</li>
-              <li>Phone alarms are common but incomplete</li>
-              <li>Logging must be fast (≤ 2 taps)</li>
-              <li>Older users need clarity + large text</li>
-            </ul>
+          <div class="stat-card">
+            <span class="stat-number">75%</span>
+            <span class="stat-label">miss doses weekly or more</span>
           </div>
-
-          <div class="card">
-            <h3 class="card-title">Design implications</h3>
-            <ul class="bullets">
-              <li>One-tap “Taken” from reminder</li>
-              <li>Persistent reminders until confirmed</li>
-              <li>Simple weekly adherence summary</li>
-              <li>Accessibility-first typography & contrast</li>
-            </ul>
+          <div class="stat-card">
+            <span class="stat-number">92%</span>
+            <span class="stat-label">rated reliable reminders 5/5</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">58%</span>
+            <span class="stat-label">use phone alarms as strategy</span>
           </div>
         </div>
+        <p>Top reasons for missing doses: too busy (33%), forgot (33%), unsure if already taken (25%). Top usability frustrations with existing apps: small text (33%), too many steps (25%).</p>
+      </div>
 
-        <div class="card wide">
-          <h3 class="card-title">Charts / Evidence</h3>
-          <p class="note">
-            Insert charts here (screenshots from Google Forms analytics or your own graphs).
-          </p>
-          <div class="placeholder">
-            <span>Drop images here: research charts (PNG/JPG)</span>
+      <div class="prose-block">
+        <h3>Secondary Research - Literature</h3>
+        <p>The WHO reports that adherence to long-term therapies averages approximately 50% in developed countries. Mobile-based reminder interventions increase compliance, especially when users can actively confirm actions rather than relying on passive alerts. From an HCI perspective, reducing cognitive load is essential: visible confirmation of completed actions reduces uncertainty and error. Research on notifications shows that excessive alerts contribute to disengagement; adaptive strategies improve long-term engagement.</p>
+      </div>
+
+      <div class="prose-block">
+        <h3>Key Findings</h3>
+        <div class="findings-grid">
+          <figure class="finding-card">
+            <img src="images/fig1.png" alt="Key finding #1" loading="lazy" />
+            <figcaption>Fig. 1 - Key Finding #1</figcaption>
+          </figure>
+          <figure class="finding-card">
+            <img src="images/fig2.png" alt="Key finding #2" loading="lazy" />
+            <figcaption>Fig. 2 - Key Finding #2</figcaption>
+          </figure>
+          <figure class="finding-card">
+            <img src="images/fig3.png" alt="Key finding #3" loading="lazy" />
+            <figcaption>Fig. 3 - Key Finding #3</figcaption>
+          </figure>
+          <figure class="finding-card">
+            <img src="images/fig4.png" alt="Key finding #4" loading="lazy" />
+            <figcaption>Fig. 4 - Key Finding #4</figcaption>
+          </figure>
+          <figure class="finding-card">
+            <img src="images/fig5.png" alt="Key finding #5" loading="lazy" />
+            <figcaption>Fig. 5 - Key Finding #5</figcaption>
+          </figure>
+          <figure class="finding-card">
+            <img src="images/fig6.png" alt="Key finding #6" loading="lazy" />
+            <figcaption>Fig. 6 - Key Finding #6</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="prose-block">
+        <h3>Design Decisions from Research</h3>
+        <div class="decisions-list">
+          <div class="decision-card">
+            <span class="decision-num">1</span>
+            <div>
+              <h4>Interactive Reminders</h4>
+              <p>One-tap Taken / Snooze / Skip with immediate state feedback, because missed doses are frequent even with alarms.</p>
+            </div>
+          </div>
+          <div class="decision-card">
+            <span class="decision-num">2</span>
+            <div>
+              <h4>Highly Visible Status</h4>
+              <p>Show last-taken time, today's medication list, and next scheduled dose prominently to eliminate "did I take it?" uncertainty.</p>
+            </div>
+          </div>
+          <div class="decision-card">
+            <span class="decision-num">3</span>
+            <div>
+              <h4>Minimal Steps with Confirmation</h4>
+              <p>Marking a dose takes two taps or fewer. A two-tap confirmation creates a mindful moment, cementing the action in memory while preventing accidental misclicks.</p>
+            </div>
+          </div>
+          <div class="decision-card">
+            <span class="decision-num">4</span>
+            <div>
+              <h4>Adaptive Notifications</h4>
+              <p>Users choose Discreet / Persistent / Adaptive. If no response, escalate gradually. Max reminders configurable to avoid spamming.</p>
+            </div>
+          </div>
+          <div class="decision-card">
+            <span class="decision-num">5</span>
+            <div>
+              <h4>Scalable "Today" View</h4>
+              <p>Medications grouped by time blocks (Morning / Afternoon / Evening) with clear status and easy access to details.</p>
+            </div>
+          </div>
+          <div class="decision-card">
+            <span class="decision-num">6</span>
+            <div>
+              <h4>Clear Navigation</h4>
+              <p>Bottom nav with icons for core features. Settings moved to top-right to maximize space for daily essentials.</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- PERSONAS -->
+    <!-- ================================================ -->
+    <!--  03 - PERSONAS                                    -->
+    <!-- ================================================ -->
     <section id="personas" class="section">
-      <div class="container">
-        <div class="section-head">
-          <h2>Personas</h2>
-          <p class="section-sub">At least two detailed personas grounded in research.</p>
+      <div class="section-header">
+        <span class="section-number">03</span>
+        <h2>Personas</h2>
+      </div>
+
+      <p class="section-intro">Three personas were developed from the survey and literature, each representing a distinct usage focus within MedicNova, together covering all core workflows.</p>
+
+      <div class="persona-grid">
+        <div class="persona-card">
+          <div class="persona-tag">Busy Self-Manager</div>
+          <h3>Sarah Valkov</h3>
+          <p>Sarah represents the most common survey pattern: self-managed medication in a busy lifestyle, where doses are missed due to being busy or forgetting. She needs fast, low-friction interactions: one-tap actions and minimal steps.</p>
+          <figure>
+            <img src="images/fig7.png" alt="Sarah Valkov persona card" loading="lazy" />
+            <figcaption>Fig. 7 - Sarah's Persona</figcaption>
+          </figure>
         </div>
 
-        <div class="grid-2">
-          <article class="card persona">
-            <div class="persona-head">
-              <div>
-                <h3 class="card-title">Persona 1 — Maria</h3>
-                <p class="muted-text">63 • Retired • Multiple medications daily</p>
-              </div>
-              <span class="badge">Accessibility-focused</span>
-            </div>
+        <div class="persona-card">
+          <div class="persona-tag">Clarity &amp; Accessibility Seeker</div>
+          <h3>David Rando</h3>
+          <p>David represents low-tech users who struggle with verification and confidence, especially with multiple medications. He highlights why MedicNova must prioritize visible confirmation states, timestamps, and accessible UI defaults.</p>
+          <figure>
+            <img src="images/fig8.png" alt="David Rando persona card" loading="lazy" />
+            <figcaption>Fig. 8 - David's Persona</figcaption>
+          </figure>
+        </div>
 
-            <div class="persona-grid">
-              <div>
-                <h4>Goals</h4>
-                <ul class="bullets">
-                  <li>Never miss a dose</li>
-                  <li>Feel confident and reassured</li>
-                  <li>Simple appointment management</li>
-                </ul>
-              </div>
-              <div>
-                <h4>Pain points</h4>
-                <ul class="bullets">
-                  <li>Too many steps or small text</li>
-                  <li>Unclear confirmation if taken</li>
-                  <li>Notification fatigue</li>
-                </ul>
-              </div>
-              <div>
-                <h4>Behaviors</h4>
-                <ul class="bullets">
-                  <li>Uses phone + paper notes</li>
-                  <li>Prefers calm, clear UI</li>
-                </ul>
-              </div>
-              <div>
-                <h4>Quote</h4>
-                <p class="quote">“I just want to be sure I took it — without getting confused.”</p>
-              </div>
-            </div>
-          </article>
-
-          <article class="card persona">
-            <div class="persona-head">
-              <div>
-                <h3 class="card-title">Persona 2 — David</h3>
-                <p class="muted-text">32 • Busy professional • One medication daily</p>
-              </div>
-              <span class="badge">Speed-focused</span>
-            </div>
-
-            <div class="persona-grid">
-              <div>
-                <h4>Goals</h4>
-                <ul class="bullets">
-                  <li>Fast logging</li>
-                  <li>Discreet reminders at work</li>
-                  <li>Quick appointment booking</li>
-                </ul>
-              </div>
-              <div>
-                <h4>Pain points</h4>
-                <ul class="bullets">
-                  <li>Too many confirmations</li>
-                  <li>Hard to see progress quickly</li>
-                </ul>
-              </div>
-              <div>
-                <h4>Behaviors</h4>
-                <ul class="bullets">
-                  <li>Uses calendar + notifications heavily</li>
-                  <li>Skims UI; wants shortcuts</li>
-                </ul>
-              </div>
-              <div>
-                <h4>Quote</h4>
-                <p class="quote">“If it takes more than a few seconds, I’ll stop using it.”</p>
-              </div>
-            </div>
-          </article>
+        <div class="persona-card">
+          <div class="persona-tag">Care Coordinator</div>
+          <h3>Leila</h3>
+          <p>Leila relies on healthcare tools for care coordination: appointment scheduling and doctor messaging. She ensures the design supports the broader workflow of managing health beyond daily reminders.</p>
+          <figure>
+            <img src="images/fig9.png" alt="Leila persona card" loading="lazy" />
+            <figcaption>Fig. 9 - Leila's Persona</figcaption>
+          </figure>
         </div>
       </div>
     </section>
 
-    <!-- JOURNEY -->
-    <section id="journey" class="section">
-      <div class="container">
-        <div class="section-head">
-          <h2>Journey Maps</h2>
-          <p class="section-sub">One journey map per persona (required).</p>
-        </div>
+    <!-- ================================================ -->
+    <!--  04 - USER JOURNEYS                               -->
+    <!-- ================================================ -->
+    <section id="journeys" class="section">
+      <div class="section-header">
+        <span class="section-number">04</span>
+        <h2>User Journeys</h2>
+      </div>
 
-        <div class="card wide">
-          <h3 class="card-title">Maria — Journey map</h3>
-          <div class="placeholder">
-            <span>Insert your journey map image (wide).</span>
-          </div>
-          <p class="note">Tip: include stages, emotions, pain points, opportunities.</p>
-        </div>
+      <p class="section-intro">
+        Each persona was mapped through a user journey, tracing their emotional state, actions, touchpoints, and pain points as they interact with the health management process end-to-end.
+      </p>
 
-        <div class="card wide">
-          <h3 class="card-title">David — Journey map</h3>
-          <div class="placeholder">
-            <span>Insert your journey map image (wide).</span>
-          </div>
-        </div>
+      <div class="journey-gallery">
+        <figure class="gallery-item">
+          <img src="images/fig10.png" alt="Sarah's user journey map" loading="lazy" />
+          <figcaption>Fig. 10 - Sarah's Journey</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="images/fig11.png" alt="David's user journey map" loading="lazy" />
+          <figcaption>Fig. 11 - David's Journey</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="images/fig12.png" alt="Leila's user journey map" loading="lazy" />
+          <figcaption>Fig. 12 - Leila's Journey</figcaption>
+        </figure>
       </div>
     </section>
 
-    <!-- REQUIREMENTS -->
-    <section id="requirements" class="section">
-      <div class="container">
-        <div class="section-head">
-          <h2>Requirements</h2>
-          <p class="section-sub">Trace research insights to design requirements.</p>
-        </div>
-
-        <div class="card wide">
-          <div class="table-wrap" role="region" aria-label="Requirements table" tabindex="0">
-            <table class="table">
-              <thead>
-                <tr>
-                  <th>Insight</th>
-                  <th>User need</th>
-                  <th>Product requirement</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Users forget weekly</td>
-                  <td>Reliable reminders</td>
-                  <td>Persistent reminder until confirmed</td>
-                </tr>
-                <tr>
-                  <td>Speed is critical</td>
-                  <td>Fast interaction</td>
-                  <td>Mark “Taken” in ≤ 2 taps from reminder</td>
-                </tr>
-                <tr>
-                  <td>Older users struggle with complexity</td>
-                  <td>Accessibility and clarity</td>
-                  <td>Large text, high contrast, simple navigation depth</td>
-                </tr>
-                <tr>
-                  <td>Stress about adherence</td>
-                  <td>Confidence and reassurance</td>
-                  <td>Weekly adherence summary with simple visuals</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <p class="note">
-            Replace with your real findings and add IDs like R1, R2… if you want.
-          </p>
-        </div>
+    <!-- ================================================ -->
+    <!--  05 - STORYBOARD                                  -->
+    <!-- ================================================ -->
+    <section id="storyboard" class="section">
+      <div class="section-header">
+        <span class="section-number">05</span>
+        <h2>Storyboard</h2>
       </div>
+
+      <p class="section-intro">
+        This storyboard illustrates a day-in-the-life scenario for Sarah, showing how MedicNova supports the core workflows: from the reminder loop (Snooze, Taken, logged with timestamp) through appointment scheduling and doctor messaging.
+      </p>
+
+      <figure class="full-width-figure">
+        <img src="images/fig13.jpeg" alt="Sarah's extended storyboard" loading="lazy" />
+        <figcaption>Fig. 13 - Sarah's Extended Storyboard</figcaption>
+      </figure>
     </section>
 
-    <!-- FLOW -->
-    <section id="flow" class="section">
-      <div class="container">
-        <div class="section-head">
-          <h2>User Flow Chart</h2>
-          <p class="section-sub">A single flow chart covering your main tasks.</p>
-        </div>
-
-        <div class="card wide">
-          <div class="placeholder">
-            <span>Insert user flow chart image (PNG/JPG).</span>
-          </div>
-          <p class="note">Keep it readable: main screens + decisions (Taken/Snooze/Skip).</p>
-        </div>
+    <!-- ================================================ -->
+    <!--  06 - USER FLOW                                   -->
+    <!-- ================================================ -->
+    <section id="userflow" class="section">
+      <div class="section-header">
+        <span class="section-number">06</span>
+        <h2>User Flow</h2>
       </div>
+
+      <p class="section-intro">
+        This flow maps how users navigate MedicNova from launch to core tasks: from first-time setup (choosing a reminder style, adding medications) through the home screen hub, branching into daily medication reminders, adherence history, messaging, appointments, and settings.
+      </p>
+
+      <figure class="full-width-figure">
+        <img src="images/fig14.png" alt="High-level user flow diagram" loading="lazy" />
+        <figcaption>Fig. 14 - High-Level User Flow</figcaption>
+      </figure>
     </section>
 
-    <!-- DESIGN -->
+    <!-- ================================================ -->
+    <!--  07 - DESIGN                                      -->
+    <!-- ================================================ -->
     <section id="design" class="section">
-      <div class="container">
-        <div class="section-head">
-          <h2>Design</h2>
-          <p class="section-sub">Sketches, wireframes, and storyboard with iteration notes.</p>
+      <div class="section-header">
+        <span class="section-number">07</span>
+        <h2>Sketching, Wireframing &amp; Prototype</h2>
+      </div>
+
+      <div class="design-subsection">
+        <h3>Initial Sketches</h3>
+        <p>
+          Before conducting the survey, several ideas were explored: some kept, others discarded once survey results showed they weren't aligned with user needs. For example, early sketches featured a constant loud reminder with no limit. Research revealed this could cause notification fatigue, leading to a more adaptive system with Discreet, Persistent, or Adaptive styles.
+        </p>
+        <div class="image-row">
+          <figure>
+            <img src="images/fig15.png" alt="Initial sketches - part 1" loading="lazy" />
+            <figcaption>Fig. 15 - Initial Sketches (Part 1)</figcaption>
+          </figure>
+          <figure>
+            <img src="images/fig16.png" alt="Initial sketches - part 2" loading="lazy" />
+            <figcaption>Fig. 16 - Initial Sketches (Part 2)</figcaption>
+          </figure>
         </div>
+      </div>
 
-        <div class="grid-2">
-          <div class="card">
-            <h3 class="card-title">Sketches</h3>
-            <div class="placeholder small">
-              <span>Insert sketches (photos/scans)</span>
-            </div>
-            <p class="note">
-              Include at least one “rejected” sketch and explain why you changed it.
-            </p>
-          </div>
-
-          <div class="card">
-            <h3 class="card-title">Wireframes</h3>
-            <div class="placeholder small">
-              <span>Insert wireframes (screenshots)</span>
-            </div>
-            <p class="note">Show key screens for your main flows.</p>
-          </div>
+      <div class="design-subsection">
+        <h3>Wireframes</h3>
+        <p>
+          These wireframes translate the research into structured layouts: focusing on information hierarchy, interaction patterns, and navigation logic. They include a mix of large-text accessibility views and standard views.
+        </p>
+        <div class="image-row">
+          <figure>
+            <img src="images/fig17.png" alt="Application setup wireframes" loading="lazy" />
+            <figcaption>Fig. 17 - App Setup Wireframes</figcaption>
+          </figure>
+          <figure>
+            <img src="images/fig18.png" alt="Medication reminder wireframes" loading="lazy" />
+            <figcaption>Fig. 18 - Reminder &amp; Notification Wireframes</figcaption>
+          </figure>
         </div>
+        <div class="image-row">
+          <figure>
+            <img src="images/fig19.png" alt="Medicament history wireframes" loading="lazy" />
+            <figcaption>Fig. 19 - Medication History Wireframes</figcaption>
+          </figure>
+          <figure>
+            <img src="images/fig20.png" alt="Appointments wireframes" loading="lazy" />
+            <figcaption>Fig. 20 - Appointments Wireframes</figcaption>
+          </figure>
+        </div>
+      </div>
 
-        <div class="card wide">
-          <h3 class="card-title">Storyboard</h3>
-          <div class="placeholder">
-            <span>Insert storyboard image (6 panels recommended).</span>
-          </div>
+      <div class="design-subsection">
+        <h3>Prototype</h3>
+        <p>
+          After exploring ideas through sketches and refining them into wireframes, the prototype was built by applying colors and detailed UI elements, bringing the concept to life as a clickable, interactive, demo-ready experience.
+        </p>
+        <div class="image-row">
+          <figure>
+            <img src="images/fig21.png" alt="Application setup prototype" loading="lazy" />
+            <figcaption>Fig. 21 - Application Setup Prototype</figcaption>
+          </figure>
+          <figure>
+            <img src="images/fig22.png" alt="Reminder and notification system prototype" loading="lazy" />
+            <figcaption>Fig. 22 - Reminder &amp; Notification System</figcaption>
+          </figure>
+        </div>
+        <div class="image-row">
+          <figure>
+            <img src="images/fig23.png" alt="History and accessibility settings prototype" loading="lazy" />
+            <figcaption>Fig. 23 - History &amp; Accessibility Settings</figcaption>
+          </figure>
+          <figure>
+            <img src="images/fig24.png" alt="Appointment and messages features prototype" loading="lazy" />
+            <figcaption>Fig. 24 - Appointment &amp; Messages Features</figcaption>
+          </figure>
         </div>
       </div>
     </section>
 
-    <!-- PROTOTYPE -->
-    <section id="prototype" class="section">
-      <div class="container">
-        <div class="section-head">
-          <h2>Clickable Prototype</h2>
-          <p class="section-sub">Embed your Figma prototype or link it clearly.</p>
-        </div>
+    <!-- ================================================ -->
+    <!--  08 - USABILITY TESTING                           -->
+    <!-- ================================================ -->
+    <section id="usability" class="section">
+      <div class="section-header">
+        <span class="section-number">08</span>
+        <h2>Usability Testing Plan</h2>
+      </div>
 
-        <div class="grid-2">
-          <div class="card">
-            <h3 class="card-title">Prototype link</h3>
-            <p>
-              Add your Figma share link below:
-            </p>
-            <p class="note">
-              Replace the href with your real link.
-            </p>
-            <a class="btn" href="https://www.figma.com" target="_blank" rel="noreferrer">
-              Open prototype
-            </a>
+      <p class="section-intro">
+        The purpose of usability testing is to evaluate whether users can complete MedicNova's core workflows efficiently and confidently, identifying issues in navigation clarity, interaction speed, and confirmation states.
+      </p>
+
+      <div class="prose-block">
+        <h3>Method &amp; Tools</h3>
+        <p>Remote, unmoderated usability testing via Maze, collecting task success/failure, time on task, misclicks, path analysis, and embedded post-task questions. A sample of at least 20 participants who manage their own medications daily.</p>
+        <p>Evaluation criteria:</p>
+        <ul class="dash-list">
+          <li>Effectiveness: can users complete tasks correctly (success rate, errors)?</li>
+          <li>Efficiency: how quickly and in how many steps do they complete tasks?</li>
+          <li>Satisfaction: how confident do users feel (qualitative feedback)?</li>
+        </ul>
+      </div>
+
+      <div class="prose-block">
+        <h3>Test Tasks</h3>
+        <div class="tasks-grid">
+          <div class="task-card">
+            <span class="task-num">1</span>
+            <div>
+              <h4>Reminder → Log Taken</h4>
+              <p>"You receive a reminder. Confirm you took the medication."</p>
+            </div>
           </div>
-
-          <div class="card">
-            <h3 class="card-title">Embed (optional)</h3>
-            <p class="note">If you want an embed, paste your Figma embed URL below.</p>
-            <div class="embed">
-              <!-- Replace src with Figma embed link -->
-              <iframe
-                title="Figma prototype"
-                src="about:blank"
-                loading="lazy"
-                allowfullscreen
-              ></iframe>
+          <div class="task-card">
+            <span class="task-num">2</span>
+            <div>
+              <h4>Verify Confirmation</h4>
+              <p>"Verify the dose was logged and check the time it was taken."</p>
+            </div>
+          </div>
+          <div class="task-card">
+            <span class="task-num">3</span>
+            <div>
+              <h4>Schedule Appointment</h4>
+              <p>"Schedule a doctor appointment for next week and add a short note."</p>
+            </div>
+          </div>
+          <div class="task-card">
+            <span class="task-num">4</span>
+            <div>
+              <h4>Message Doctor</h4>
+              <p>"Send a message to the doctor/clinic and attach a medication log."</p>
             </div>
           </div>
         </div>
       </div>
-    </section>
 
-    <!-- TESTING -->
-    <section id="testing" class="section">
-      <div class="container">
-        <div class="section-head">
-          <h2>Usability Testing</h2>
-          <p class="section-sub">Plan, tasks, metrics, results, and iteration.</p>
-        </div>
-
-        <div class="grid-3">
-          <div class="card">
-            <h3 class="card-title">Goals</h3>
-            <ul class="bullets">
-              <li>Can users add a medication?</li>
-              <li>Can users log a dose quickly?</li>
-              <li>Can users find weekly adherence?</li>
-            </ul>
-          </div>
-
-          <div class="card">
-            <h3 class="card-title">Tasks</h3>
-            <ol class="toc">
-              <li>Add a medication + schedule</li>
-              <li>Respond to a reminder</li>
-              <li>Check weekly summary</li>
-            </ol>
-          </div>
-
-          <div class="card">
-            <h3 class="card-title">Metrics</h3>
-            <ul class="bullets">
-              <li>Task success rate</li>
-              <li>Time on task</li>
-              <li>Errors / confusion points</li>
-              <li>SEQ (1–7 ease rating)</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="card wide">
-          <h3 class="card-title">Results & Iterations</h3>
-          <p class="note">
-            Add 3 key findings + what you changed. Include before/after screenshots.
-          </p>
-          <div class="placeholder">
-            <span>Insert “before vs after” screenshots here.</span>
-          </div>
-        </div>
+      <div class="iteration-box">
+        <h3>Analysis &amp; Iteration Strategy</h3>
+        <p>
+          Issues will be grouped by severity: High (blocks task completion), Medium (causes friction), and Low (minor visual adjustments). Changes may include improving Taken status visibility, reducing steps in the reminder workflow, and strengthening confirmation feedback.
+        </p>
       </div>
     </section>
 
-    <!-- REFLECTION -->
+    <!-- ================================================ -->
+    <!--  09 - REFLECTION                                  -->
+    <!-- ================================================ -->
     <section id="reflection" class="section">
-      <div class="container">
-        <div class="section-head">
-          <h2>Reflection</h2>
-          <p class="section-sub">What you learned, what you would improve, and why.</p>
-        </div>
+      <div class="section-header">
+        <span class="section-number">09</span>
+        <h2>Reflection</h2>
+      </div>
 
-        <div class="grid-2">
-          <div class="card">
-            <h3 class="card-title">What worked</h3>
-            <ul class="bullets">
-              <li>Research-driven requirements reduced redesign later</li>
-              <li>One-tap logging improved efficiency</li>
-              <li>Clear hierarchy improved learnability</li>
-            </ul>
-          </div>
+      <div class="reflection-content">
+        <blockquote class="pull-quote">
+          "This process reinforced the value of evidence-based iteration: designing with users in mind, validating assumptions through research, and preparing usability testing to guide improvements."
+        </blockquote>
 
-          <div class="card">
-            <h3 class="card-title">What I’d improve</h3>
-            <ul class="bullets">
-              <li>More participants for usability sessions</li>
-              <li>More scenarios (caregiver mode, refills)</li>
-              <li>Longitudinal testing (“in the wild”)</li>
-            </ul>
-          </div>
-        </div>
+        <p>
+          Following the UX design process helped me move from a broad idea, "a health companion app," to a solution grounded in specific user needs. By combining primary survey research with secondary literature, I confirmed that medication non-adherence is linked to forgetfulness, routine disruption, and cognitive overload rather than lack of motivation.
+        </p>
+
+        <p>
+          Before research, I assumed stronger reminders automatically lead to better adherence. Early sketches featured constant, loud reminders with no limit. Survey feedback made it clear this could backfire: frequent interruptions overwhelm users. I replaced the no-limit approach with selectable reminder styles (Discreet, Persistent, Adaptive) and a Snooze option. Good design doesn't push users harder; it supports them in realistic contexts.
+        </p>
+
+        <p>
+          Creating personas, journey maps, and a storyboard made the problem more concrete by revealing where breakdowns happen in everyday life. These insights directly influenced the wireframes and prototype: making reminder interactions immediately actionable, ensuring "Taken" status and timestamps are easy to find, and keeping key actions accessible from the Home screen.
+        </p>
+
+        <p>
+          The main challenge was scope control. It was easy to overdesign beyond the core problem. I addressed this by prioritizing workflows most strongly supported by research and integrating appointments and messaging as focused supporting flows rather than competing features.
+        </p>
+      </div>
+
+      <div class="references">
+        <h3>References</h3>
+        <ol>
+          <li>World Health Organization. (2003). <em>Adherence to long-term therapies: Evidence for action.</em></li>
+          <li>Jimmy, B., &amp; Jose, J. (2011). Patient medication adherence: Measures in daily practice. <em>Oman Medical Journal.</em></li>
+          <li>Thakkar, J. et al. (2016). Mobile telephone text messaging for medication adherence. <em>JMIR, 18</em>(1).</li>
+          <li>Norman, D. A. (2013). <em>The Design of Everyday Things</em> (Revised Edition). Basic Books.</li>
+          <li>Pielot, M. et al. (2015). An in-situ study of mobile phone notifications. <em>UbiComp '15.</em></li>
+          <li>Nielsen, J. (2012). Usability Testing 101. <em>Nielsen Norman Group.</em></li>
+        </ol>
       </div>
     </section>
 
-    <!-- APPENDIX -->
-    <section id="appendix" class="section">
-      <div class="container">
-        <div class="section-head">
-          <h2>Appendix / Assets</h2>
-          <p class="section-sub">Put extra charts, notes, raw responses, or references here.</p>
-        </div>
-
-        <div class="card">
-          <p class="note">
-            Recommended: include a link to your survey form (if allowed) and anonymized results.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="section">
-      <div class="container">
-        <div class="card">
-          <h2 class="card-title">Contact</h2>
-          <p class="muted-text">Your email / GitHub link</p>
-        </div>
-      </div>
-    </section>
-
-    <footer class="footer">
-      <div class="container footer-inner">
-        <p>© <span id="year"></span> Your Name — SOEN 357 Mini Project</p>
-        <a href="#top">Back to top</a>
-      </div>
+    <!-- ============ FOOTER ============ -->
+    <footer class="site-footer">
+      <p>SOEN 357 - Mini-Project &middot; February 2026</p>
     </footer>
+
   </main>
+
+  <!-- ======= LIGHTBOX (outside main for fixed overlay) ======= -->
+  <div id="lightbox" class="lightbox">
+    <div class="lightbox-toolbar">
+      <button class="lightbox-zoom-btn" id="zoomIn" aria-label="Zoom in">+</button>
+      <button class="lightbox-zoom-btn" id="zoomOut" aria-label="Zoom out">&minus;</button>
+      <button class="lightbox-close" aria-label="Close">&times;</button>
+    </div>
+    <div class="lightbox-scroll">
+      <img class="lightbox-img" src="" alt="" />
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
